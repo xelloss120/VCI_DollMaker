@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.virtualcast.univci": "https://github.com/virtual-cast/VCI.git?path=/Assets/VCI#v0.33.0",
+    "com.thirdparty.naudio": "https://github.com/virtual-cast/VCI.git?path=/Assets/NAudio#v0.33.0",
+    "com.thirdparty.effekseer": "https://github.com/virtual-cast/VCI.git?path=/Assets/Effekseer#v0.33.0",
+    "com.vrmc.vrmshaders": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRMShaders#v0.88.0",
+    "com.vrmc.gltf": "https://github.com/vrm-c/UniVRM.git?path=/Assets/UniGLTF#v0.88.0",
+    "com.vrmc.univrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM#v0.88.0",
+    "com.vrmc.vrm": "https://github.com/vrm-c/UniVRM.git?path=/Assets/VRM10#v0.88.0",
     "com.unity.collab-proxy": "1.14.13",
     "com.unity.ide.rider": "1.2.1",
     "com.unity.ide.visualstudio": "2.0.14",
