@@ -59,6 +59,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Paid assets
+_exe/
 Assets/Plugins/
 Assets/Plugins.meta
 Assets/_TerrainAutoUpgrade/
