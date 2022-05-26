@@ -7,6 +7,9 @@ public class ChangeBlendShape : MonoBehaviour
     [SerializeField] ImportVRM ImportVRM;
     [SerializeField] Dropdown Dropdown;
 
+    /// <summary>
+    /// 表情設定
+    /// </summary>
     public void Changed()
     {
         var proxy = ImportVRM.Model.GetComponent<VRMBlendShapeProxy>();
