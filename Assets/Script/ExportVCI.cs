@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using SFB;
 using UniGLTF;
+using VRM;
 using VCI;
 using VRMShaders;
 
@@ -36,7 +37,7 @@ public class ExportVCI : MonoBehaviour
         if (path == "") return;
 
         var doll = Instantiate(RagDollPrefab);
-        var model = Instantiate(ImportVRM.Model);
+        var model = VRMBoneNormalizer.Execute(ImportVRM.Model, false); // 表情適用のため再正規化
         model.transform.parent = doll.transform;
 
         var vci = doll.GetComponent<VCIObject>();
