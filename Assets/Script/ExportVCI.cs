@@ -30,6 +30,8 @@ public class ExportVCI : MonoBehaviour
 
     [SerializeField] Text Message;
 
+    string Path = "";
+
     /// <summary>
     /// 必須項目の入力確認
     /// </summary>
@@ -56,10 +58,17 @@ public class ExportVCI : MonoBehaviour
     {
         if (CheckInputField()) return;
 
-        var path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", "", "vci");
+        Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", "", "vci");
 
-        if (path == "") return;
+        if (Path == "") return;
 
+        Invoke("ExportRagDollSetup", 0.1f);
+
+        Message.text = "ラグドール書き出し中";
+    }
+
+    void ExportRagDollSetup()
+    {
         var root = Instantiate(RagDollPrefab);
         var model = VRMBoneNormalizer.Execute(ImportVRM.Model, false); // 表情適用のため再正規化
         model.transform.parent = root.transform;
@@ -125,9 +134,11 @@ public class ExportVCI : MonoBehaviour
         exporter.Export(new RuntimeTextureSerializer());
         exporter.Dispose();
         var bytes = data.ToGlbBytes();
-        File.WriteAllBytes(path, bytes);
+        File.WriteAllBytes(Path, bytes);
 
         Destroy(root);
+
+        Message.text = "";
     }
 
     void SetJoint(Animator anim, HumanBodyBones bone, HumanBodyBones body, Transform root, Vector3 axis, float min, float max)
