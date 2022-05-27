@@ -52,7 +52,7 @@ public class ExportVCI : MonoBehaviour
     }
 
     /// <summary>
-    /// ラグドール書き出し
+    /// FK人形書き出し
     /// </summary>
     public void ExportFK_Doll()
     {
@@ -65,6 +65,22 @@ public class ExportVCI : MonoBehaviour
         Invoke("ExportFK_DollSetup", 0.1f);
 
         Message.text = "FK人形書き出し中";
+    }
+
+    /// <summary>
+    /// IK人形書き出し
+    /// </summary>
+    public void ExportIK_Doll()
+    {
+        if (CheckInputField()) return;
+
+        Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", "", "vci");
+
+        if (Path == "") return;
+
+        Invoke("ExportIK_DollSetup", 0.1f);
+
+        Message.text = "IK人形書き出し中";
     }
 
     /// <summary>
@@ -101,6 +117,84 @@ public class ExportVCI : MonoBehaviour
 
         var anim = model.GetComponent<Animator>();
         anim.GetBoneTransform(HumanBodyBones.Hips).gameObject.name = "Hips";
+        anim.GetBoneTransform(HumanBodyBones.Chest).gameObject.name = "Chest";
+        anim.GetBoneTransform(HumanBodyBones.Head).gameObject.name = "Head";
+        anim.GetBoneTransform(HumanBodyBones.LeftUpperArm).gameObject.name = "LeftUpperArm";
+        anim.GetBoneTransform(HumanBodyBones.LeftLowerArm).gameObject.name = "LeftLowerArm";
+        anim.GetBoneTransform(HumanBodyBones.LeftHand).gameObject.name = "LeftHand";
+        anim.GetBoneTransform(HumanBodyBones.RightUpperArm).gameObject.name = "RightUpperArm";
+        anim.GetBoneTransform(HumanBodyBones.RightLowerArm).gameObject.name = "RightLowerArm";
+        anim.GetBoneTransform(HumanBodyBones.RightHand).gameObject.name = "RightHand";
+        anim.GetBoneTransform(HumanBodyBones.LeftUpperLeg).gameObject.name = "LeftUpperLeg";
+        anim.GetBoneTransform(HumanBodyBones.LeftLowerLeg).gameObject.name = "LeftLowerLeg";
+        anim.GetBoneTransform(HumanBodyBones.LeftFoot).gameObject.name = "LeftFoot";
+        anim.GetBoneTransform(HumanBodyBones.RightUpperLeg).gameObject.name = "RightUpperLeg";
+        anim.GetBoneTransform(HumanBodyBones.RightLowerLeg).gameObject.name = "RightLowerLeg";
+        anim.GetBoneTransform(HumanBodyBones.RightFoot).gameObject.name = "RightFoot";
+
+        anim.GetBoneTransform(HumanBodyBones.LeftThumbProximal).gameObject.name = "LeftThumbProximal";
+        anim.GetBoneTransform(HumanBodyBones.LeftThumbIntermediate).gameObject.name = "LeftThumbIntermediate";
+        anim.GetBoneTransform(HumanBodyBones.LeftThumbDistal).gameObject.name = "LeftThumbDistal";
+        anim.GetBoneTransform(HumanBodyBones.LeftIndexProximal).gameObject.name = "LeftIndexProximal";
+        anim.GetBoneTransform(HumanBodyBones.LeftIndexIntermediate).gameObject.name = "LeftIndexIntermediate";
+        anim.GetBoneTransform(HumanBodyBones.LeftIndexDistal).gameObject.name = "LeftIndexDistal";
+        anim.GetBoneTransform(HumanBodyBones.LeftMiddleProximal).gameObject.name = "LeftMiddleProximal";
+        anim.GetBoneTransform(HumanBodyBones.LeftMiddleIntermediate).gameObject.name = "LeftMiddleIntermediate";
+        anim.GetBoneTransform(HumanBodyBones.LeftMiddleDistal).gameObject.name = "LeftMiddleDistal";
+        anim.GetBoneTransform(HumanBodyBones.LeftRingProximal).gameObject.name = "LeftRingProximal";
+        anim.GetBoneTransform(HumanBodyBones.LeftRingIntermediate).gameObject.name = "LeftRingIntermediate";
+        anim.GetBoneTransform(HumanBodyBones.LeftRingDistal).gameObject.name = "LeftRingDistal";
+        anim.GetBoneTransform(HumanBodyBones.LeftLittleProximal).gameObject.name = "LeftLittleProximal";
+        anim.GetBoneTransform(HumanBodyBones.LeftLittleIntermediate).gameObject.name = "LeftLittleIntermediate";
+        anim.GetBoneTransform(HumanBodyBones.LeftLittleDistal).gameObject.name = "LeftLittleDistal";
+
+        anim.GetBoneTransform(HumanBodyBones.RightThumbProximal).gameObject.name = "RightThumbProximal";
+        anim.GetBoneTransform(HumanBodyBones.RightThumbIntermediate).gameObject.name = "RightThumbIntermediate";
+        anim.GetBoneTransform(HumanBodyBones.RightThumbDistal).gameObject.name = "RightThumbDistal";
+        anim.GetBoneTransform(HumanBodyBones.RightIndexProximal).gameObject.name = "RightIndexProximal";
+        anim.GetBoneTransform(HumanBodyBones.RightIndexIntermediate).gameObject.name = "RightIndexIntermediate";
+        anim.GetBoneTransform(HumanBodyBones.RightIndexDistal).gameObject.name = "RightIndexDistal";
+        anim.GetBoneTransform(HumanBodyBones.RightMiddleProximal).gameObject.name = "RightMiddleProximal";
+        anim.GetBoneTransform(HumanBodyBones.RightMiddleIntermediate).gameObject.name = "RightMiddleIntermediate";
+        anim.GetBoneTransform(HumanBodyBones.RightMiddleDistal).gameObject.name = "RightMiddleDistal";
+        anim.GetBoneTransform(HumanBodyBones.RightRingProximal).gameObject.name = "RightRingProximal";
+        anim.GetBoneTransform(HumanBodyBones.RightRingIntermediate).gameObject.name = "RightRingIntermediate";
+        anim.GetBoneTransform(HumanBodyBones.RightRingDistal).gameObject.name = "RightRingDistal";
+        anim.GetBoneTransform(HumanBodyBones.RightLittleProximal).gameObject.name = "RightLittleProximal";
+        anim.GetBoneTransform(HumanBodyBones.RightLittleIntermediate).gameObject.name = "RightLittleIntermediate";
+        anim.GetBoneTransform(HumanBodyBones.RightLittleDistal).gameObject.name = "RightLittleDistal";
+
+        var data = new ExportingGltfData();
+        var exporter = new VCIExporter(data);
+        exporter.Prepare(root);
+        exporter.Export(new RuntimeTextureSerializer());
+        exporter.Dispose();
+        var bytes = data.ToGlbBytes();
+        File.WriteAllBytes(Path, bytes);
+
+        Destroy(root);
+
+        Message.text = "";
+    }
+
+    void ExportIK_DollSetup()
+    {
+        var root = Instantiate(IK_DollPrefab);
+        var model = VRMBoneNormalizer.Execute(ImportVRM.Model, false); // 表情適用のため再正規化
+        model.transform.parent = root.transform.Find("TargetParent");
+        model.name = "Root";
+
+        var vci = root.GetComponent<VCIObject>();
+        vci.Meta.title = Title.text;
+        vci.Meta.version = Version.text;
+        vci.Meta.author = Author.text;
+        vci.Meta.contactInformation = Contact.text;
+        vci.Meta.reference = Reference.text;
+        vci.Meta.thumbnail = RenderTextureToTexture2D();
+        vci.Meta.modelDataLicenseType = (VciMetaLicenseType)LicenseType.value;
+        vci.Meta.modelDataOtherLicenseUrl = LicenseUrl.text;
+
+        var anim = model.GetComponent<Animator>();
         anim.GetBoneTransform(HumanBodyBones.Chest).gameObject.name = "Chest";
         anim.GetBoneTransform(HumanBodyBones.Head).gameObject.name = "Head";
         anim.GetBoneTransform(HumanBodyBones.LeftUpperArm).gameObject.name = "LeftUpperArm";
