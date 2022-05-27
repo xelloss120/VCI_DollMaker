@@ -197,12 +197,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7380703}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 52104193}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &32064819
 GameObject:
@@ -282,6 +282,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32064819}
   m_CullTransparentMesh: 0
+--- !u!1 &52104192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 52104193}
+  m_Layer: 0
+  m_Name: ViewPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &52104193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52104192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7380706}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &143780065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4261,6 +4292,7 @@ GameObject:
   - component: {fileID: 1598183243}
   - component: {fileID: 1598183244}
   - component: {fileID: 1598183245}
+  - component: {fileID: 1598183246}
   m_Layer: 0
   m_Name: main
   m_TagString: Untagged
@@ -4337,6 +4369,23 @@ MonoBehaviour:
   LicenseUrl: {fileID: 1769227402}
   Camera: {fileID: 7380705}
   RenderTexture: {fileID: 8400000, guid: 1907661499051dd4f8f8f7469cab0233, type: 2}
+--- !u!114 &1598183246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598183241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d89de44ef309a84d8056fd7a409cc29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetCam: {fileID: 7380705}
+  ViewPoint: {fileID: 52104193}
+  Angle_Speed: 1
+  PosXY_Speed: 0.005
+  Size_Speed: 0.5
 --- !u!1 &1651347666
 GameObject:
   m_ObjectHideFlags: 0
