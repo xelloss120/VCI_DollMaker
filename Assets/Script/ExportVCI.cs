@@ -28,11 +28,34 @@ public class ExportVCI : MonoBehaviour
     [SerializeField] Camera Camera;
     [SerializeField] RenderTexture RenderTexture;
 
+    [SerializeField] Text Message;
+
+    /// <summary>
+    /// 必須項目の入力確認
+    /// </summary>
+    bool CheckInputField()
+    {
+        if (Title.text == "")
+        {
+            Message.text = "タイトルの入力は必須です。";
+            return true;
+        }
+        if (Author.text == "")
+        {
+            Message.text = "作成者の入力は必須です。";
+            return true;
+        }
+        Message.text = "";
+        return false;
+    }
+
     /// <summary>
     /// ラグドール書き出し
     /// </summary>
     public void ExportRagDoll()
     {
+        if (CheckInputField()) return;
+
         var path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", "", "vci");
 
         if (path == "") return;
