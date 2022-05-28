@@ -4469,6 +4469,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
+  Title: {fileID: 954513656}
+  BlendShape: {fileID: 709990914}
 --- !u!114 &1598183244
 MonoBehaviour:
   m_ObjectHideFlags: 0

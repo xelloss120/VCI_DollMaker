@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
+using UnityEngine.UI;
 using SFB;
 using UniGLTF;
 using VRM;
@@ -6,6 +8,9 @@ using VRM;
 public class ImportVRM : MonoBehaviour
 {
     public GameObject Model;
+
+    [SerializeField] InputField Title;
+    [SerializeField] Dropdown BlendShape;
 
     /// <summary>
     /// VRM読み込み
@@ -31,5 +36,8 @@ public class ImportVRM : MonoBehaviour
 
         if (Model != null) Destroy(Model);
         Model = instance.Root;
+
+        Title.text = Path.GetFileNameWithoutExtension(paths[0]);
+        BlendShape.value = 0;
     }
 }
