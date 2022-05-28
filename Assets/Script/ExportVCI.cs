@@ -39,7 +39,7 @@ public class ExportVCI : MonoBehaviour
     {
         if (CheckInputField()) return;
 
-        Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", "", "vci");
+        Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", Title.text, "vci");
 
         if (Path == "") return;
 
@@ -55,7 +55,7 @@ public class ExportVCI : MonoBehaviour
     {
         if (CheckInputField()) return;
 
-        Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", "", "vci");
+        Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", Title.text, "vci");
 
         if (Path == "") return;
 
@@ -71,7 +71,7 @@ public class ExportVCI : MonoBehaviour
     {
         if (CheckInputField()) return;
 
-        Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", "", "vci");
+        Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", Title.text, "vci");
 
         if (Path == "") return;
 
