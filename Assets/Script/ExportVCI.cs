@@ -37,7 +37,7 @@ public class ExportVCI : MonoBehaviour
     /// </summary>
     public void ExportFK_Doll()
     {
-        if (CheckInputField()) return;
+        if (CheckInput()) return;
 
         Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", Title.text, "vci");
 
@@ -53,7 +53,7 @@ public class ExportVCI : MonoBehaviour
     /// </summary>
     public void ExportIK_Doll()
     {
-        if (CheckInputField()) return;
+        if (CheckInput()) return;
 
         Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", Title.text, "vci");
 
@@ -69,7 +69,7 @@ public class ExportVCI : MonoBehaviour
     /// </summary>
     public void ExportRagDoll()
     {
-        if (CheckInputField()) return;
+        if (CheckInput()) return;
 
         Path = StandaloneFileBrowser.SaveFilePanel("Export VCI File", "", Title.text, "vci");
 
@@ -83,8 +83,13 @@ public class ExportVCI : MonoBehaviour
     /// <summary>
     /// 必須項目の入力確認
     /// </summary>
-    bool CheckInputField()
+    bool CheckInput()
     {
+        if (ImportVRM.Model == null)
+        {
+            Message.text = "VRM読み込みは必須です。";
+            return true;
+        }
         if (Title.text == "")
         {
             Message.text = "タイトルの入力は必須です。";
