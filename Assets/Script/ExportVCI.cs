@@ -45,7 +45,7 @@ public class ExportVCI : MonoBehaviour
 
         Invoke("ExportFK_DollSetup", 0.1f);
 
-        Message.text = "FK人形書き出し中";
+        Message.text = "FK人形書き出し中\nこのメッセージが消えない場合は\n非対応モデルです。\n要再起動";
     }
 
     /// <summary>
@@ -61,7 +61,7 @@ public class ExportVCI : MonoBehaviour
 
         Invoke("ExportIK_DollSetup", 0.1f);
 
-        Message.text = "IK人形書き出し中";
+        Message.text = "IK人形書き出し中\nこのメッセージが消えない場合は\n非対応モデルです。\n要再起動";
     }
 
     /// <summary>
@@ -77,7 +77,7 @@ public class ExportVCI : MonoBehaviour
 
         Invoke("ExportRagDollSetup", 0.1f);
 
-        Message.text = "ラグドール書き出し中";
+        Message.text = "ラグドール書き出し中\nこのメッセージが消えない場合は\n非対応モデルです。\n要再起動";
     }
 
     /// <summary>
