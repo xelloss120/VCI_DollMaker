@@ -3735,33 +3735,35 @@ MonoBehaviour:
       = Text..\"\u624B\u4EE5\u5916\u306E\u64CD\u4F5C\u7528\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092use\u3067\\n\"\r\nText
       = Text..\"\u64CD\u4F5C\u7528\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u306E\u8868\u793A\u5207\u308A\u66FF\u3048\u53EF\u80FD\\n\\n\"\r\nText
       = Text..\"\u7C21\u6613IK\u306E\u305F\u3081\u82E6\u624B\u306A\u30DD\u30FC\u30BA\u3042\u308A\"\r\nvci.assets._ALL_SetText(\"Text\",
-      Text)\r\n\r\nTargetParent = vci.assets.GetTransform(\"TargetParent\")\r\nScaleX
-      = TargetParent.GetLocalScale().x\r\n\r\nTargetRoot = vci.assets.GetTransform(\"TargetRoot\")\r\nRoot
-      = vci.assets.GetTransform(\"Root\")\r\n\r\nTargetChest = vci.assets.GetTransform(\"TargetChest\")\r\nChest
-      = vci.assets.GetTransform(\"Chest\")\r\n\r\nTargetHead = vci.assets.GetTransform(\"TargetHead\")\r\nHead
-      = vci.assets.GetTransform(\"Head\")\r\n\r\nTargetHandL = vci.assets.GetTransform(\"TargetHandL\")\r\nUpperArmL
+      Text)\r\n\r\n-- \u4F53\r\nTargetParent = vci.assets.GetTransform(\"TargetParent\")\r\nScaleX
+      = TargetParent.GetLocalScale().x\r\nTargetRootHandle = vci.assets.GetTransform(\"TargetRootHandle\")\r\nTargetRoot
+      = vci.assets.GetTransform(\"TargetRoot\")\r\nRoot = vci.assets.GetTransform(\"Root\")\r\nTargetChest
+      = vci.assets.GetTransform(\"TargetChest\")\r\nChest = vci.assets.GetTransform(\"Chest\")\r\nTargetHead
+      = vci.assets.GetTransform(\"TargetHead\")\r\nHead = vci.assets.GetTransform(\"Head\")\r\n\r\n--
+      \u5DE6\u8155\r\nTargetHandL = vci.assets.GetTransform(\"TargetHandL\")\r\nUpperArmL
       = vci.assets.GetTransform(\"LeftUpperArm\")\r\nLowerArmL = vci.assets.GetTransform(\"LeftLowerArm\")\r\nHandL
       = vci.assets.GetTransform(\"LeftHand\")\r\nDistArmL = Vector3.Distance(UpperArmL.GetPosition(),
-      HandL.GetPosition()) / ScaleX\r\n\r\nTargetHandR = vci.assets.GetTransform(\"TargetHandR\")\r\nUpperArmR
+      HandL.GetPosition()) / ScaleX\r\n\r\n-- \u53F3\u8155\r\nTargetHandR = vci.assets.GetTransform(\"TargetHandR\")\r\nUpperArmR
       = vci.assets.GetTransform(\"RightUpperArm\")\r\nLowerArmR = vci.assets.GetTransform(\"RightLowerArm\")\r\nHandR
       = vci.assets.GetTransform(\"RightHand\")\r\nDistArmR = Vector3.Distance(UpperArmR.GetPosition(),
-      HandR.GetPosition()) / ScaleX\r\n\r\nTargetFootL = vci.assets.GetTransform(\"TargetFootL\")\r\nUpperLegL
+      HandR.GetPosition()) / ScaleX\r\n\r\n-- \u5DE6\u8DB3\r\nTargetFootL = vci.assets.GetTransform(\"TargetFootL\")\r\nUpperLegL
       = vci.assets.GetTransform(\"LeftUpperLeg\")\r\nLowerLegL = vci.assets.GetTransform(\"LeftLowerLeg\")\r\nFootL
       = vci.assets.GetTransform(\"LeftFoot\")\r\nDistLegL = Vector3.Distance(UpperLegL.GetPosition(),
-      FootL.GetPosition()) / ScaleX\r\n\r\nTargetFootR = vci.assets.GetTransform(\"TargetFootR\")\r\nUpperLegR
+      FootL.GetPosition()) / ScaleX\r\n\r\n-- \u53F3\u8DB3\r\nTargetFootR = vci.assets.GetTransform(\"TargetFootR\")\r\nUpperLegR
       = vci.assets.GetTransform(\"RightUpperLeg\")\r\nLowerLegR = vci.assets.GetTransform(\"RightLowerLeg\")\r\nFootR
       = vci.assets.GetTransform(\"RightFoot\")\r\nDistLegR = Vector3.Distance(UpperLegR.GetPosition(),
-      FootR.GetPosition()) / ScaleX\r\n\r\nLeftThumbProximal = vci.assets.GetTransform(\"LeftThumbProximal\")\r\nLeftThumbIntermediate
-      = vci.assets.GetTransform(\"LeftThumbIntermediate\")\r\nLeftThumbDistal = vci.assets.GetTransform(\"LeftThumbDistal\")\r\nLeftIndexProximal
-      = vci.assets.GetTransform(\"LeftIndexProximal\")\r\nLeftIndexIntermediate =
-      vci.assets.GetTransform(\"LeftIndexIntermediate\")\r\nLeftIndexDistal = vci.assets.GetTransform(\"LeftIndexDistal\")\r\nLeftMiddleProximal
+      FootR.GetPosition()) / ScaleX\r\n\r\n-- \u5DE6\u624B\r\nLeftThumbProximal =
+      vci.assets.GetTransform(\"LeftThumbProximal\")\r\nLeftThumbIntermediate = vci.assets.GetTransform(\"LeftThumbIntermediate\")\r\nLeftThumbDistal
+      = vci.assets.GetTransform(\"LeftThumbDistal\")\r\nLeftIndexProximal = vci.assets.GetTransform(\"LeftIndexProximal\")\r\nLeftIndexIntermediate
+      = vci.assets.GetTransform(\"LeftIndexIntermediate\")\r\nLeftIndexDistal = vci.assets.GetTransform(\"LeftIndexDistal\")\r\nLeftMiddleProximal
       = vci.assets.GetTransform(\"LeftMiddleProximal\")\r\nLeftMiddleIntermediate
       = vci.assets.GetTransform(\"LeftMiddleIntermediate\")\r\nLeftMiddleDistal =
       vci.assets.GetTransform(\"LeftMiddleDistal\")\r\nLeftRingProximal = vci.assets.GetTransform(\"LeftRingProximal\")\r\nLeftRingIntermediate
       = vci.assets.GetTransform(\"LeftRingIntermediate\")\r\nLeftRingDistal = vci.assets.GetTransform(\"LeftRingDistal\")\r\nLeftLittleProximal
       = vci.assets.GetTransform(\"LeftLittleProximal\")\r\nLeftLittleIntermediate
       = vci.assets.GetTransform(\"LeftLittleIntermediate\")\r\nLeftLittleDistal =
-      vci.assets.GetTransform(\"LeftLittleDistal\")\r\n\r\nRightThumbProximal = vci.assets.GetTransform(\"RightThumbProximal\")\r\nRightThumbIntermediate
+      vci.assets.GetTransform(\"LeftLittleDistal\")\r\n\r\n-- \u53F3\u624B\r\nRightThumbProximal
+      = vci.assets.GetTransform(\"RightThumbProximal\")\r\nRightThumbIntermediate
       = vci.assets.GetTransform(\"RightThumbIntermediate\")\r\nRightThumbDistal =
       vci.assets.GetTransform(\"RightThumbDistal\")\r\nRightIndexProximal = vci.assets.GetTransform(\"RightIndexProximal\")\r\nRightIndexIntermediate
       = vci.assets.GetTransform(\"RightIndexIntermediate\")\r\nRightIndexDistal =
@@ -3771,79 +3773,68 @@ MonoBehaviour:
       = vci.assets.GetTransform(\"RightRingIntermediate\")\r\nRightRingDistal = vci.assets.GetTransform(\"RightRingDistal\")\r\nRightLittleProximal
       = vci.assets.GetTransform(\"RightLittleProximal\")\r\nRightLittleIntermediate
       = vci.assets.GetTransform(\"RightLittleIntermediate\")\r\nRightLittleDistal
-      = vci.assets.GetTransform(\"RightLittleDistal\")\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\u51E6\u7406\u306E\u518D\u5165\u5BA4\u6642\u72B6\u614B\u7DAD\u6301\u3092\u76EE\u7684\u3068\u3057\u305F\u521D\u671F\u5316\r\nTargetRootHandle
-      = vci.assets.GetTransform(\"TargetRootHandle\")\r\nTargetRootHandleChild =
-      vci.assets.GetTransform(\"TargetRootHandleChild\")\r\nTargetRootHandleChild.SetPosition(TargetRootHandle.GetPosition())\r\nTargetRootHandleChild.SetRotation(TargetRootHandle.GetRotation())\r\nRoot.SetPosition(TargetRoot.GetPosition())\r\nRoot.SetRotation(TargetRoot.GetRotation())\r\nChest.SetRotation(TargetChest.GetRotation())\r\nTargetHeadChild
+      = vci.assets.GetTransform(\"RightLittleDistal\")\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\u51E6\u7406\u306E\u518D\u5165\u5BA4\u6642\u72B6\u614B\u7DAD\u6301\u3092\u76EE\u7684\u3068\u3057\u305F\u521D\u671F\u5316\r\nChest.SetRotation(TargetChest.GetRotation())\r\nRoot.SetPosition(TargetRoot.GetPosition())\r\nRoot.SetRotation(TargetRoot.GetRotation())\r\nTargetRootHandleChild
+      = vci.assets.GetTransform(\"TargetRootHandleChild\")\r\nTargetRootHandleChild.SetPosition(TargetRootHandle.GetPosition())\r\nTargetRootHandleChild.SetRotation(TargetRootHandle.GetRotation())\r\nTargetHeadChild
       = vci.assets.GetTransform(\"TargetHeadChild\")\r\nTargetHeadChild.SetPosition(TargetHead.GetPosition())\r\nTargetHeadChild.SetRotation(TargetHead.GetRotation())\r\nTargetHandLChild
       = vci.assets.GetTransform(\"TargetHandLChild\")\r\nTargetHandLChild.SetPosition(TargetHandL.GetPosition())\r\nTargetHandLChild.SetRotation(TargetHandL.GetRotation())\r\nTargetHandRChild
       = vci.assets.GetTransform(\"TargetHandRChild\")\r\nTargetHandRChild.SetPosition(TargetHandR.GetPosition())\r\nTargetHandRChild.SetRotation(TargetHandR.GetRotation())\r\nTargetFootLChild
       = vci.assets.GetTransform(\"TargetFootLChild\")\r\nTargetFootLChild.SetPosition(TargetFootL.GetPosition())\r\nTargetFootLChild.SetRotation(TargetFootL.GetRotation())\r\nTargetFootRChild
-      = vci.assets.GetTransform(\"TargetFootRChild\")\r\nTargetFootRChild.SetPosition(TargetFootR.GetPosition())\r\nTargetFootRChild.SetRotation(TargetFootR.GetRotation())\r\n\r\nState
-      = vci.assets.GetTransform(\"State\")\r\n\r\nTargetCubeR = vci.assets.GetTransform(\"TargetCubeR\")\r\n\r\nif
+      = vci.assets.GetTransform(\"TargetFootRChild\")\r\nTargetFootRChild.SetPosition(TargetFootR.GetPosition())\r\nTargetFootRChild.SetRotation(TargetFootR.GetRotation())\r\n\r\n--
+      UI\u8868\u793A\u3068\u5DE6\u53F3\u306E\u624B\u306E\u72B6\u614B\u7BA1\u7406\u3092XYZ\u3067\u5BFE\u5FDC\r\nState
+      = vci.assets.GetTransform(\"State\")\r\n\r\n-- \u64CD\u4F5C\u5BFE\u8C61\u306E\u5F37\u8ABF\u8868\u793A\u7528\r\nTargetCubeR
+      = vci.assets.GetTransform(\"TargetCubeR\")\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\u7528\u306E\u72B6\u614B\u5909\u6570\u3092\u521D\u671F\u5316\r\nif
       vci.assets.IsMine then\r\n    vci.state.Set(\"Current\", \"\")\r\nend\r\n\r\nfunction
-      updateAll()\r\n    SetTransform(\"TargetRootHandle\")\r\n    SetTransform(\"TargetHead\")\r\n   
-      SetTransform(\"TargetHandL\")\r\n    SetTransform(\"TargetHandR\")\r\n    SetTransform(\"TargetFootL\")\r\n   
-      SetTransform(\"TargetFootR\")\r\n\r\n    Root.SetPosition(TargetRoot.GetPosition())\r\n   
+      updateAll()\r\n    -- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\r\n    UpdateTransform(\"TargetRootHandle\")\r\n   
+      UpdateTransform(\"TargetHead\")\r\n    UpdateTransform(\"TargetHandL\")\r\n   
+      UpdateTransform(\"TargetHandR\")\r\n    UpdateTransform(\"TargetFootL\")\r\n   
+      UpdateTransform(\"TargetFootR\")\r\n\r\n    Root.SetPosition(TargetRoot.GetPosition())\r\n   
       Root.SetRotation(TargetRoot.GetRotation())\r\n\r\n    TargetChest.SetPosition(Chest.GetPosition()
-      + Chest.GetForward() * 0.2)\r\n    if vci.state.Get(\"Current\") == \"TargetChest\"
-      then\r\n        Chest.SetRotation(TargetChest.GetRotation())\r\n    else\r\n       
-      TargetChest.SetRotation(Chest.GetRotation())\r\n    end\r\n\r\n    local pos
-      = TargetHead.GetPosition() - Head.GetPosition()\r\n    Head.SetRotation(Quaternion.LookRotation(pos,
-      TargetHead.GetUp()))\r\n\r\n    Ctrl(TargetHandL, UpperArmL, LowerArmL, HandL,
-      DistArmL, true, 1)\r\n    Ctrl(TargetHandR, UpperArmR, LowerArmR, HandR, DistArmR,
-      true, -1)\r\n    Ctrl(TargetFootL, UpperLegL, LowerLegL, FootL, DistLegL, false,
-      1)\r\n    Ctrl(TargetFootR, UpperLegR, LowerLegR, FootR, DistLegR, false, -1)\r\n\r\n   
-      CtrlFingerL()\r\n    CtrlFingerR()\r\n\r\n    local scale = TargetParent.GetLocalScale()\r\n   
+      + Chest.GetForward() * 0.2)\r\n    local current = vci.state.Get(\"Current\")\r\n   
+      if current == \"TargetChest\" then\r\n        Chest.SetRotation(TargetChest.GetRotation())\r\n   
+      elseif current == \"TargetParent\" or current == \"TargetRootHandle\" then\r\n       
+      TargetChest.SetRotation(Chest.GetRotation())\r\n    end\r\n\r\n    -- \u982D\u306E\u64CD\u4F5C\u53CD\u6620\r\n   
+      local pos = TargetHead.GetPosition() - Head.GetPosition()\r\n    Head.SetRotation(Quaternion.LookRotation(pos,
+      TargetHead.GetUp()))\r\n\r\n    -- \u56DB\u80A2\u306E\u64CD\u4F5C\u53CD\u6620\r\n   
+      UpdateLimbs(TargetHandL, UpperArmL, LowerArmL, HandL, DistArmL, true, 1)\r\n   
+      UpdateLimbs(TargetHandR, UpperArmR, LowerArmR, HandR, DistArmR, true, -1)\r\n   
+      UpdateLimbs(TargetFootL, UpperLegL, LowerLegL, FootL, DistLegL, false, 1)\r\n   
+      UpdateLimbs(TargetFootR, UpperLegR, LowerLegR, FootR, DistLegR, false, -1)\r\n\r\n   
+      -- \u624B\u306E\u64CD\u4F5C\u53CD\u6620\r\n    UpdateFingerL()\r\n    UpdateFingerR()\r\n\r\n   
+      -- \u62E1\u7E2E\u306E\u64CD\u4F5C\u53CD\u6620\r\n    local scale = TargetParent.GetLocalScale()\r\n   
       TargetRootHandle.SetLocalScale(scale)\r\n    TargetHead.SetLocalScale(scale)\r\n   
       TargetChest.SetLocalScale(scale)\r\n    TargetHandL.SetLocalScale(scale)\r\n   
       TargetHandR.SetLocalScale(scale)\r\n    TargetFootL.SetLocalScale(scale)\r\n   
-      TargetFootR.SetLocalScale(scale)\r\n    TargetCubeR.SetLocalScale(scale)\r\nend\r\n\r\n--
-      \u624B\u8DB3\u306E\u64CD\u4F5C\r\nfunction Ctrl(target, upper, lower, limbs,
-      distance, hand, LR)\r\n    -- \u8DB3\u624B\u5411\u304D\r\n    local pos = target.GetPosition()
-      - upper.GetPosition()\r\n    local arm = LR == 1 and HandL.GetForward() or
-      HandR.GetForward()\r\n    local leg = LR == 1 and FootL.GetForward() or FootR.GetForward()\r\n   
-      local dir = hand and arm or leg\r\n    local look = Quaternion.LookRotation(pos,
-      dir)\r\n\r\n    -- \u8DB3\u624B\u30AA\u30D5\u30BB\u30C3\u30C8\u5411\u304D\r\n   
-      local offsetX = hand and 0 or -90\r\n    local offsetY = hand and 90 * LR or
-      0\r\n    local offset = Quaternion.Euler(offsetX, offsetY, 0)\r\n\r\n    --
-      \u819D\u8098\u5411\u304D\u7528\u8DDD\u96E2\u6BD4\r\n    local dist = Vector3.Distance(upper.GetPosition(),
-      target.GetPosition())\r\n    local scale = TargetParent.GetLocalScale().x\r\n   
-      local ratio = math.max((distance * scale - dist) / (distance * scale), 0)\r\n\r\n   
-      -- \u819D\u8098\u5411\u304D\r\n    local upperX = hand and 0 or -90 * ratio\r\n   
-      local lowerX = hand and 0 or 90 * ratio\r\n    local upperY = hand and -90
-      * ratio * LR or 0\r\n    local lowerY = hand and 90 * ratio * LR or 0\r\n   
-      local offsetU = Quaternion.Euler(upperX, upperY, 0)\r\n    local offsetL =
-      Quaternion.Euler(lowerX, lowerY, 0)\r\n\r\n    -- \u9069\u7528\r\n    upper.SetRotation(look
-      * offset * offsetU)\r\n    lower.SetRotation(look * offset * offsetL)\r\n   
-      limbs.SetRotation(target.GetRotation())\r\nend\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\r\nfunction
-      SetTransform(name)\r\n    local target = vci.assets.GetTransform(name)\r\n   
-      local child = vci.assets.GetTransform(name..\"Child\")\r\n    if vci.state.Get(\"Current\")
-      == name or target.IsAttached then\r\n        child.SetPosition(target.GetPosition())\r\n       
-      child.SetRotation(target.GetRotation())\r\n    else\r\n        target.SetPosition(child.GetPosition())\r\n       
-      target.SetRotation(child.GetRotation())\r\n    end\r\nend\r\n\r\nfunction onGrab(target)\r\n   
-      vci.state.Set(\"Current\", target)\r\nend\r\n\r\nfunction onUngrab()\r\n   
-      vci.state.Set(\"Current\", \"\")\r\nend\r\n\r\n-- UI\u8868\u793A\u5207\u308A\u66FF\u3048\r\nfunction
-      Display(init)\r\n    local pos = State.GetLocalPosition()\r\n    if math.floor(pos.x
-      + 0.5) == (init and 0 or 1) then\r\n        pos.x = init and pos.x or 0\r\n       
-      vci.assets.material._ALL_SetColor(\"Target\", Color.__new(192/255, 192/255,
-      192/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetR\", Color.__new(192/255,
-      32/255, 32/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetG\",
-      Color.__new(32/255, 192/255, 32/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetB\",
-      Color.__new(32/255, 32/255, 192/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetCubeW\",
-      Color.__new(192/255, 192/255, 192/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetCubeR\",
-      Color.__new(192/255, 32/255, 32/255, 1))\r\n        vci.assets._ALL_SetText(\"Text\",
-      Text)\r\n    else\r\n        pos.x = init and pos.x or 1\r\n        vci.assets.material._ALL_SetColor(\"Target\",
-      Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetR\",
-      Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetG\",
-      Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetB\",
-      Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetCubeW\",
-      Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetCubeR\",
-      Color.__new(0, 0, 0, 0))\r\n        vci.assets._ALL_SetText(\"Text\", \"\")\r\n   
-      end\r\n    State.SetLocalPosition(pos)\r\nend\r\nDisplay(true)\r\n\r\nfunction
-      ChangeFingerL()\r\n    local pos = State.GetLocalPosition()\r\n    pos.y =
-      math.floor(pos.y + 0.5)\r\n    pos.y = pos.y < 4 and pos.y + 1 or 0\r\n   
-      State.SetLocalPosition(pos)\r\nend\r\n\r\nfunction CtrlFingerL()\r\n    local
-      pos = State.GetLocalPosition()\r\n    pos.y = math.floor(pos.y + 0.5)\r\n   
+      TargetFootR.SetLocalScale(scale)\r\n    TargetCubeR.SetLocalScale(scale)\r\nend\r\n\r\nfunction
+      onGrab(target)\r\n    vci.state.Set(\"Current\", target)\r\nend\r\n\r\nfunction
+      onUngrab()\r\n    vci.state.Set(\"Current\", \"\")\r\nend\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\r\nfunction
+      UpdateTransform(name)\r\n    local target = vci.assets.GetTransform(name)\r\n   
+      local child = vci.assets.GetTransform(name..\"Child\")\r\n    local current
+      = vci.state.Get(\"Current\")\r\n    if current == name or target.IsAttached
+      then\r\n        child.SetPosition(target.GetPosition())\r\n        child.SetRotation(target.GetRotation())\r\n   
+      elseif current == \"TargetParent\" then\r\n        target.SetPosition(child.GetPosition())\r\n       
+      target.SetRotation(child.GetRotation())\r\n    end\r\nend\r\n\r\n-- \u56DB\u80A2\u306E\u64CD\u4F5C\r\nfunction
+      UpdateLimbs(target, upper, lower, limbs, distance, hand, LR)\r\n    -- \u8DB3\u624B\u5411\u304D\r\n   
+      local pos = target.GetPosition() - upper.GetPosition()\r\n    local arm = LR
+      == 1 and HandL.GetForward() or HandR.GetForward()\r\n    local leg = LR ==
+      1 and FootL.GetForward() or FootR.GetForward()\r\n    local dir = hand and
+      arm or leg\r\n    local look = Quaternion.LookRotation(pos, dir)\r\n\r\n   
+      -- \u8DB3\u624B\u30AA\u30D5\u30BB\u30C3\u30C8\u5411\u304D\r\n    local offsetX
+      = hand and 0 or -90\r\n    local offsetY = hand and 90 * LR or 0\r\n    local
+      offset = Quaternion.Euler(offsetX, offsetY, 0)\r\n\r\n    -- \u819D\u8098\u5411\u304D\u7528\u8DDD\u96E2\u6BD4\r\n   
+      local dist = Vector3.Distance(upper.GetPosition(), target.GetPosition())\r\n   
+      local scale = TargetParent.GetLocalScale().x\r\n    local ratio = math.max((distance
+      * scale - dist) / (distance * scale), 0)\r\n\r\n    -- \u819D\u8098\u5411\u304D\r\n   
+      local upperX = hand and 0 or -90 * ratio\r\n    local lowerX = hand and 0 or
+      90 * ratio\r\n    local upperY = hand and -90 * ratio * LR or 0\r\n    local
+      lowerY = hand and 90 * ratio * LR or 0\r\n    local offsetU = Quaternion.Euler(upperX,
+      upperY, 0)\r\n    local offsetL = Quaternion.Euler(lowerX, lowerY, 0)\r\n\r\n   
+      -- \u53CD\u6620\r\n    upper.SetRotation(look * offset * offsetU)\r\n    lower.SetRotation(look
+      * offset * offsetL)\r\n    limbs.SetRotation(target.GetRotation())\r\nend\r\n\r\n--
+      \u5DE6\u624B\u306E\u72B6\u614B\u9077\u79FB\r\nfunction ChangeFingerL()\r\n   
+      local pos = State.GetLocalPosition()\r\n    pos.y = math.floor(pos.y + 0.5)\r\n   
+      pos.y = pos.y < 4 and pos.y + 1 or 0\r\n    State.SetLocalPosition(pos)\r\nend\r\n\r\n--
+      \u5DE6\u624B\u306E\u72B6\u614B\u53CD\u6620\r\nfunction UpdateFingerL()\r\n   
+      local pos = State.GetLocalPosition()\r\n    pos.y = math.floor(pos.y + 0.5)\r\n   
       if pos.y == 0 then\r\n        -- \u30D1\u30FC\r\n        LeftThumbProximal.SetLocalRotation(Quaternion.Euler(0,
       0, 0))\r\n        LeftThumbIntermediate.SetLocalRotation(Quaternion.Euler(0,
       0, 0))\r\n        LeftThumbDistal.SetLocalRotation(Quaternion.Euler(0, 0, 0))\r\n       
@@ -3910,12 +3901,13 @@ MonoBehaviour:
       LeftRingDistal.SetLocalRotation(Quaternion.Euler(0, 0, 80))\r\n        LeftLittleProximal.SetLocalRotation(Quaternion.Euler(0,
       0, 80))\r\n        LeftLittleIntermediate.SetLocalRotation(Quaternion.Euler(0,
       0, 80))\r\n        LeftLittleDistal.SetLocalRotation(Quaternion.Euler(0, 0,
-      80))\r\n    end\r\nend\r\nCtrlFingerL()\r\n\r\nfunction ChangeFingerR()\r\n   
-      local pos = State.GetLocalPosition()\r\n    pos.z = math.floor(pos.z + 0.5)\r\n   
-      pos.z = pos.z < 4 and pos.z + 1 or 0\r\n    State.SetLocalPosition(pos)\r\nend\r\n\r\nfunction
-      CtrlFingerR()\r\n    local pos = State.GetLocalPosition()\r\n    pos.z = math.floor(pos.z
-      + 0.5)\r\n    if pos.z == 0 then\r\n        -- \u30D1\u30FC\r\n        RightThumbProximal.SetLocalRotation(Quaternion.Euler(0,
-      0, 0))\r\n        RightThumbIntermediate.SetLocalRotation(Quaternion.Euler(0,
+      80))\r\n    end\r\nend\r\nUpdateFingerL()\r\n\r\n-- \u53F3\u624B\u306E\u72B6\u614B\u9077\u79FB\r\nfunction
+      ChangeFingerR()\r\n    local pos = State.GetLocalPosition()\r\n    pos.z =
+      math.floor(pos.z + 0.5)\r\n    pos.z = pos.z < 4 and pos.z + 1 or 0\r\n   
+      State.SetLocalPosition(pos)\r\nend\r\n\r\n-- \u53F3\u624B\u306E\u72B6\u614B\u53CD\u6620\r\nfunction
+      UpdateFingerR()\r\n    local pos = State.GetLocalPosition()\r\n    pos.z =
+      math.floor(pos.z + 0.5)\r\n    if pos.z == 0 then\r\n        -- \u30D1\u30FC\r\n       
+      RightThumbProximal.SetLocalRotation(Quaternion.Euler(0, 0, 0))\r\n        RightThumbIntermediate.SetLocalRotation(Quaternion.Euler(0,
       0, 0))\r\n        RightThumbDistal.SetLocalRotation(Quaternion.Euler(0, 0,
       0))\r\n        RightIndexProximal.SetLocalRotation(Quaternion.Euler(0, 0, 0))\r\n       
       RightIndexIntermediate.SetLocalRotation(Quaternion.Euler(0, 0, 0))\r\n       
@@ -3986,10 +3978,29 @@ MonoBehaviour:
       -80))\r\n        RightLittleProximal.SetLocalRotation(Quaternion.Euler(0, 0,
       -80))\r\n        RightLittleIntermediate.SetLocalRotation(Quaternion.Euler(0,
       0, -80))\r\n        RightLittleDistal.SetLocalRotation(Quaternion.Euler(0,
-      0, -80))\r\n    end\r\nend\r\nCtrlFingerR()\r\n\r\nfunction onUse(use)\r\n   
-      if use ~= \"TargetHandL\" and use ~= \"TargetHandR\" then\r\n        Display(false)\r\n   
-      elseif use == \"TargetHandL\" then\r\n        ChangeFingerL()\r\n    elseif
-      use == \"TargetHandR\" then\r\n        ChangeFingerR()\r\n    end\r\nend\r\n\r\nfunction
+      0, -80))\r\n    end\r\nend\r\nUpdateFingerR()\r\n\r\n-- UI\u306E\u72B6\u614B\u9077\u79FB\uFF08\u8868\u793A\u5207\u308A\u66FF\u3048\uFF09\r\nfunction
+      ChangeUI()\r\n    local pos = State.GetLocalPosition()\r\n    pos.x = math.floor(pos.x
+      + 0.5)\r\n    pos.x = pos.x < 1 and pos.x + 1 or 0\r\n    State.SetLocalPosition(pos)\r\n   
+      UpdateUI(pos.x)\r\nend\r\n\r\n-- UI\u306E\u72B6\u614B\u53CD\u6620\uFF08\u8868\u793A\u5207\u308A\u66FF\u3048\uFF09\r\nfunction
+      UpdateUI(state)\r\n    if state == 0 then\r\n        vci.assets.material._ALL_SetColor(\"Target\",
+      Color.__new(192/255, 192/255, 192/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetR\",
+      Color.__new(192/255, 32/255, 32/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetG\",
+      Color.__new(32/255, 192/255, 32/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetB\",
+      Color.__new(32/255, 32/255, 192/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetCubeW\",
+      Color.__new(192/255, 192/255, 192/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetCubeR\",
+      Color.__new(192/255, 32/255, 32/255, 1))\r\n        vci.assets._ALL_SetText(\"Text\",
+      Text)\r\n    else\r\n        vci.assets.material._ALL_SetColor(\"Target\",
+      Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetR\",
+      Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetG\",
+      Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetB\",
+      Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetCubeW\",
+      Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetCubeR\",
+      Color.__new(0, 0, 0, 0))\r\n        vci.assets._ALL_SetText(\"Text\", \"\")\r\n   
+      end\r\nend\r\nUpdateUI(math.floor(State.GetLocalPosition().x + 0.5))\r\n\r\n--
+      Use\u304B\u3089\u5404\u7A2E\u72B6\u614B\u9077\u79FB\r\nfunction onUse(use)\r\n   
+      if use == \"TargetHandL\" then\r\n        ChangeFingerL()\r\n    elseif use
+      == \"TargetHandR\" then\r\n        ChangeFingerR()\r\n    else\r\n        ChangeUI()\r\n   
+      end\r\nend\r\n\r\n-- \u64CD\u4F5C\u5BFE\u8C61\u306E\u5F37\u8ABF\u8868\u793A\r\nfunction
       onTriggerEnter(item, hit)\r\n    if item ~= vci.state.Get(\"Current\") and
       hit == \"HandPointMarker\" then\r\n        local transform = vci.assets.GetTransform(item)\r\n       
       local pos = transform.GetPosition()\r\n        local rot = transform.GetRotation()\r\n       
