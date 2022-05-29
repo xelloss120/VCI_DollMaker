@@ -1309,10 +1309,11 @@ MonoBehaviour:
       = vci.assets.GetTransform(\"RightLittleProximal\")\r\nRightLittleIntermediate
       = vci.assets.GetTransform(\"RightLittleIntermediate\")\r\nRightLittleDistal
       = vci.assets.GetTransform(\"RightLittleDistal\")\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\u51E6\u7406\u306E\u518D\u5165\u5BA4\u6642\u72B6\u614B\u7DAD\u6301\u3092\u76EE\u7684\u3068\u3057\u305F\u521D\u671F\u5316\r\nHips.SetRotation(TargetHips.GetRotation())\r\nChest.SetRotation(TargetChest.GetRotation())\r\nHead.SetRotation(TargetHead.GetRotation())\r\nLeftUpperArm.SetRotation(TargetUArmL.GetRotation())\r\nLeftLowerArm.SetRotation(TargetLArmL.GetRotation())\r\nLeftHand.SetRotation(TargetHandL.GetRotation())\r\nRightUpperArm.SetRotation(TargetUArmR.GetRotation())\r\nRightLowerArm.SetRotation(TargetLArmR.GetRotation())\r\nRightHand.SetRotation(TargetHandR.GetRotation())\r\nLeftUpperLeg.SetRotation(TargetULegL.GetRotation())\r\nLeftLowerLeg.SetRotation(TargetLLegL.GetRotation())\r\nLeftFoot.SetRotation(TargetFootL.GetRotation())\r\nRightUpperLeg.SetRotation(TargetULegR.GetRotation())\r\nRightLowerLeg.SetRotation(TargetLLegR.GetRotation())\r\nRightFoot.SetRotation(TargetFootR.GetRotation())\r\n\r\n--
-      UI\u8868\u793A\u3068\u5DE6\u53F3\u306E\u624B\u306E\u72B6\u614B\u7BA1\u7406\u3092XYZ\u3067\u5BFE\u5FDC\r\nState
+      Rotation\u306B\u3088\u308BPosition\u5909\u5316\u304C\u5373\u6642\u53CD\u6620\u3055\u308C\u306A\u3044\uFF1F\u305F\u3081\u82E6\u8089\u306E\u7B56\u3067N\u30D5\u30EC\u30FC\u30E0\u51E6\u7406\r\nInitCount
+      = 100\r\n\r\n-- UI\u8868\u793A\u3068\u5DE6\u53F3\u306E\u624B\u306E\u72B6\u614B\u7BA1\u7406\u3092XYZ\u3067\u5BFE\u5FDC\r\nState
       = vci.assets.GetTransform(\"State\")\r\n\r\n-- \u64CD\u4F5C\u5BFE\u8C61\u306E\u5F37\u8ABF\u8868\u793A\u7528\r\nTargetCubeR
       = vci.assets.GetTransform(\"TargetCubeR\")\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\u7528\u306E\u72B6\u614B\u5909\u6570\u3092\u521D\u671F\u5316\r\nif
-      vci.assets.IsMine then\r\n    vci.state.Set(\"Current\", \"init\")\r\nend\r\n\r\nfunction
+      vci.assets.IsMine then\r\n    vci.state.Set(\"Current\", \"\")\r\nend\r\n\r\nfunction
       updateAll()\r\n    -- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\r\n    UpdateTransform(TargetHips,
       Hips, true)\r\n    UpdateTransform(TargetChest, Chest, true)\r\n    UpdateTransform(TargetHead,
       Head, true)\r\n    UpdateTransform(TargetUArmL, LeftUpperArm, false)\r\n   
@@ -1329,9 +1330,9 @@ MonoBehaviour:
       onUngrab()\r\n    vci.state.Set(\"Current\", \"\")\r\nend\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\r\nfunction
       UpdateTransform(target, joint, offset)\r\n    local current = vci.state.Get(\"Current\")\r\n   
       if current == target.GetName() then\r\n        joint.SetRotation(target.GetRotation())\r\n   
-      elseif current ~= \"\" then\r\n        target.SetPosition(joint.GetPosition()
-      + (offset and joint.GetForward() * 0.2 or Vector3.zero))\r\n        target.SetRotation(joint.GetRotation())\r\n   
-      end\r\n    target.SetLocalScale(TargetRoot.GetLocalScale())\r\nend\r\n\r\n--
+      elseif current ~= \"\" or InitCount > 0 then\r\n        target.SetPosition(joint.GetPosition()
+      + (offset and joint.GetForward() * 0.2 or Vector3.zero))\r\n        target.SetRotation(joint.GetRotation())\r\n       
+      InitCount = InitCount - 1\r\n    end\r\n    target.SetLocalScale(TargetRoot.GetLocalScale())\r\nend\r\n\r\n--
       \u5DE6\u624B\u306E\u72B6\u614B\u9077\u79FB\r\nfunction ChangeFingerL()\r\n   
       local pos = State.GetLocalPosition()\r\n    pos.y = math.floor(pos.y + 0.5)\r\n   
       pos.y = pos.y < 4 and pos.y + 1 or 0\r\n    State.SetLocalPosition(pos)\r\nend\r\n\r\n--
