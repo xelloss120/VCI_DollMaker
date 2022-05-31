@@ -3773,14 +3773,15 @@ MonoBehaviour:
       = vci.assets.GetTransform(\"RightRingIntermediate\")\r\nRightRingDistal = vci.assets.GetTransform(\"RightRingDistal\")\r\nRightLittleProximal
       = vci.assets.GetTransform(\"RightLittleProximal\")\r\nRightLittleIntermediate
       = vci.assets.GetTransform(\"RightLittleIntermediate\")\r\nRightLittleDistal
-      = vci.assets.GetTransform(\"RightLittleDistal\")\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\u51E6\u7406\u306E\u518D\u5165\u5BA4\u6642\u72B6\u614B\u7DAD\u6301\u3092\u76EE\u7684\u3068\u3057\u305F\u521D\u671F\u5316\r\nChest.SetRotation(TargetChest.GetRotation())\r\nRoot.SetPosition(TargetRoot.GetPosition())\r\nRoot.SetRotation(TargetRoot.GetRotation())\r\nTargetRootHandleChild
+      = vci.assets.GetTransform(\"RightLittleDistal\")\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\u51E6\u7406\u306E\u518D\u5165\u5BA4\u6642\u72B6\u614B\u7DAD\u6301\u3092\u76EE\u7684\u3068\u3057\u305F\u521D\u671F\u5316\r\nRoot.SetPosition(TargetRoot.GetPosition())\r\nRoot.SetRotation(TargetRoot.GetRotation())\r\nTargetRootHandleChild
       = vci.assets.GetTransform(\"TargetRootHandleChild\")\r\nTargetRootHandleChild.SetPosition(TargetRootHandle.GetPosition())\r\nTargetRootHandleChild.SetRotation(TargetRootHandle.GetRotation())\r\nTargetHeadChild
       = vci.assets.GetTransform(\"TargetHeadChild\")\r\nTargetHeadChild.SetPosition(TargetHead.GetPosition())\r\nTargetHeadChild.SetRotation(TargetHead.GetRotation())\r\nTargetHandLChild
       = vci.assets.GetTransform(\"TargetHandLChild\")\r\nTargetHandLChild.SetPosition(TargetHandL.GetPosition())\r\nTargetHandLChild.SetRotation(TargetHandL.GetRotation())\r\nTargetHandRChild
       = vci.assets.GetTransform(\"TargetHandRChild\")\r\nTargetHandRChild.SetPosition(TargetHandR.GetPosition())\r\nTargetHandRChild.SetRotation(TargetHandR.GetRotation())\r\nTargetFootLChild
       = vci.assets.GetTransform(\"TargetFootLChild\")\r\nTargetFootLChild.SetPosition(TargetFootL.GetPosition())\r\nTargetFootLChild.SetRotation(TargetFootL.GetRotation())\r\nTargetFootRChild
       = vci.assets.GetTransform(\"TargetFootRChild\")\r\nTargetFootRChild.SetPosition(TargetFootR.GetPosition())\r\nTargetFootRChild.SetRotation(TargetFootR.GetRotation())\r\n\r\n--
-      UI\u8868\u793A\u3068\u5DE6\u53F3\u306E\u624B\u306E\u72B6\u614B\u7BA1\u7406\u3092XYZ\u3067\u5BFE\u5FDC\r\nState
+      Chest\u3078\u306ERotation\u53CD\u6620\u3092IK\u51E6\u7406\u5F8C\u306B\u3059\u308B\u305F\u3081\u82E6\u8089\u306E\u7B56\u3067N\u30D5\u30EC\u30FC\u30E0\u51E6\u7406\r\nInitCount
+      = 1\r\n\r\n-- UI\u8868\u793A\u3068\u5DE6\u53F3\u306E\u624B\u306E\u72B6\u614B\u7BA1\u7406\u3092XYZ\u3067\u5BFE\u5FDC\r\nState
       = vci.assets.GetTransform(\"State\")\r\n\r\n-- \u64CD\u4F5C\u5BFE\u8C61\u306E\u5F37\u8ABF\u8868\u793A\u7528\r\nTargetCubeR
       = vci.assets.GetTransform(\"TargetCubeR\")\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\u7528\u306E\u72B6\u614B\u5909\u6570\u3092\u521D\u671F\u5316\r\nif
       vci.assets.IsMine then\r\n    vci.state.Set(\"Current\", \"\")\r\nend\r\n\r\nfunction
@@ -3788,11 +3789,12 @@ MonoBehaviour:
       UpdateTransform(\"TargetHead\")\r\n    UpdateTransform(\"TargetHandL\")\r\n   
       UpdateTransform(\"TargetHandR\")\r\n    UpdateTransform(\"TargetFootL\")\r\n   
       UpdateTransform(\"TargetFootR\")\r\n\r\n    Root.SetPosition(TargetRoot.GetPosition())\r\n   
-      Root.SetRotation(TargetRoot.GetRotation())\r\n\r\n    TargetChest.SetPosition(Chest.GetPosition()
-      + Chest.GetForward() * 0.2)\r\n    local current = vci.state.Get(\"Current\")\r\n   
-      if current == \"TargetChest\" then\r\n        Chest.SetRotation(TargetChest.GetRotation())\r\n   
-      elseif current == \"TargetParent\" or current == \"TargetRootHandle\" then\r\n       
-      TargetChest.SetRotation(Chest.GetRotation())\r\n    end\r\n\r\n    -- \u982D\u306E\u64CD\u4F5C\u53CD\u6620\r\n   
+      Root.SetRotation(TargetRoot.GetRotation())\r\n\r\n    local current = vci.state.Get(\"Current\")\r\n   
+      if current == \"TargetChest\" or TargetChest.IsAttached or InitCount == 0 then\r\n       
+      Chest.SetRotation(TargetChest.GetRotation())\r\n    elseif current == \"TargetParent\"
+      or current == \"TargetRootHandle\" then\r\n        TargetChest.SetRotation(Chest.GetRotation())\r\n       
+      TargetChest.SetPosition(Chest.GetPosition() + Chest.GetForward() * 0.2)\r\n   
+      end\r\n    InitCount = InitCount - 1\r\n\r\n    -- \u982D\u306E\u64CD\u4F5C\u53CD\u6620\r\n   
       local pos = TargetHead.GetPosition() - Head.GetPosition()\r\n    Head.SetRotation(Quaternion.LookRotation(pos,
       TargetHead.GetUp()))\r\n\r\n    -- \u56DB\u80A2\u306E\u64CD\u4F5C\u53CD\u6620\r\n   
       UpdateLimbs(TargetHandL, UpperArmL, LowerArmL, HandL, DistArmL, true, 1)\r\n   
