@@ -1228,6 +1228,7 @@ Transform:
   - {fileID: 658181097446764566}
   - {fileID: 3692653463188018894}
   - {fileID: 6476778137120336240}
+  - {fileID: 2586588506816774001}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1269,8 +1270,9 @@ MonoBehaviour:
       = Text..\"\u624B\u306E\u64CD\u4F5C\u7528\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092use\u3067\\n\"\r\nText
       = Text..\"\u6307\u3092\u64CD\u4F5C\u53EF\u80FD\uFF08\u9078\u629E\u5F0F\uFF09\\n\\n\"\r\nText
       = Text..\"\u624B\u4EE5\u5916\u306E\u64CD\u4F5C\u7528\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092use\u3067\\n\"\r\nText
-      = Text..\"\u64CD\u4F5C\u7528\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u306E\u8868\u793A\u5207\u308A\u66FF\u3048\u53EF\u80FD\"\r\nvci.assets._ALL_SetText(\"Text\",
-      Text)\r\n\r\n-- \u64CD\u4F5CUI\r\nTargetRoot = vci.assets.GetTransform(\"TargetRoot\")\r\nTargetHips
+      = Text..\"\u64CD\u4F5C\u7528\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u306E\u8868\u793A\u5207\u308A\u66FF\u3048\u53EF\u80FD\\n\"\r\nText
+      = Text..\"\u8868\u793A\u2192\u975E\u8868\u793A\u2192\u64CD\u4F5C\u4E0D\u53EF\uFF08\u30DD\u30FC\u30BA\u56FA\u5B9A\uFF09\u2192\u623B\u308B\"\r\n\r\n--
+      \u64CD\u4F5CUI\r\nTargetRoot = vci.assets.GetTransform(\"TargetRoot\")\r\nTargetHips
       = vci.assets.GetTransform(\"TargetHips\")\r\nTargetChest = vci.assets.GetTransform(\"TargetChest\")\r\nTargetHead
       = vci.assets.GetTransform(\"TargetHead\")\r\nTargetUArmL = vci.assets.GetTransform(\"TargetUArmL\")\r\nTargetLArmL
       = vci.assets.GetTransform(\"TargetLArmL\")\r\nTargetHandL = vci.assets.GetTransform(\"TargetHandL\")\r\nTargetUArmR
@@ -1312,7 +1314,8 @@ MonoBehaviour:
       Rotation\u306B\u3088\u308BPosition\u5909\u5316\u304C\u5373\u6642\u53CD\u6620\u3055\u308C\u306A\u3044\uFF1F\u305F\u3081\u82E6\u8089\u306E\u7B56\u3067N\u30D5\u30EC\u30FC\u30E0\u51E6\u7406\r\nInitCount
       = 100\r\n\r\n-- UI\u8868\u793A\u3068\u5DE6\u53F3\u306E\u624B\u306E\u72B6\u614B\u7BA1\u7406\u3092XYZ\u3067\u5BFE\u5FDC\r\nState
       = vci.assets.GetTransform(\"State\")\r\n\r\n-- \u64CD\u4F5C\u5BFE\u8C61\u306E\u5F37\u8ABF\u8868\u793A\u7528\r\nTargetCubeR
-      = vci.assets.GetTransform(\"TargetCubeR\")\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\u7528\u306E\u72B6\u614B\u5909\u6570\u3092\u521D\u671F\u5316\r\nif
+      = vci.assets.GetTransform(\"TargetCubeR\")\r\n\r\n-- UI\u518D\u8868\u793A\u7528\r\nRedisplay
+      = vci.assets.GetTransform(\"Redisplay\")\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\u7528\u306E\u72B6\u614B\u5909\u6570\u3092\u521D\u671F\u5316\r\nif
       vci.assets.IsMine then\r\n    vci.state.Set(\"Current\", \"\")\r\nend\r\n\r\nfunction
       updateAll()\r\n    -- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\r\n    UpdateTransform(TargetHips,
       Hips, true)\r\n    UpdateTransform(TargetChest, Chest, true)\r\n    UpdateTransform(TargetHead,
@@ -1325,7 +1328,10 @@ MonoBehaviour:
       LeftFoot, false)\r\n    UpdateTransform(TargetULegR, RightUpperLeg, false)\r\n   
       UpdateTransform(TargetLLegR, RightLowerLeg, false)\r\n    UpdateTransform(TargetFootR,
       RightFoot, false)\r\n\r\n    -- \u624B\u306E\u64CD\u4F5C\u53CD\u6620\r\n   
-      UpdateFingerL()\r\n    UpdateFingerR()\r\n\r\n    TargetCubeR.SetLocalScale(TargetRoot.GetLocalScale())\r\nend\r\n\r\nfunction
+      UpdateFingerL()\r\n    UpdateFingerR()\r\n\r\n    -- UI\u518D\u8868\u793A\u7528\r\n   
+      Redisplay.SetPosition(Chest.GetPosition())\r\n    Redisplay.SetRotation(Chest.GetRotation())\r\n\r\n   
+      -- \u62E1\u7E2E\u306E\u64CD\u4F5C\u53CD\u6620\r\n    Redisplay.SetLocalScale(TargetRoot.GetLocalScale())\r\n   
+      TargetCubeR.SetLocalScale(TargetRoot.GetLocalScale())\r\nend\r\n\r\nfunction
       onGrab(target)\r\n    vci.state.Set(\"Current\", target)\r\nend\r\n\r\nfunction
       onUngrab()\r\n    vci.state.Set(\"Current\", \"\")\r\nend\r\n\r\n-- \u89AA\u5B50\u95A2\u4FC2\u518D\u73FE\r\nfunction
       UpdateTransform(target, joint, offset)\r\n    local current = vci.state.Get(\"Current\")\r\n   
@@ -1483,7 +1489,7 @@ MonoBehaviour:
       0, -80))\r\n        RightLittleDistal.SetLocalRotation(Quaternion.Euler(0,
       0, -80))\r\n    end\r\nend\r\nUpdateFingerR()\r\n\r\n-- UI\u306E\u72B6\u614B\u9077\u79FB\uFF08\u8868\u793A\u5207\u308A\u66FF\u3048\uFF09\r\nfunction
       ChangeUI()\r\n    local pos = State.GetLocalPosition()\r\n    pos.x = math.floor(pos.x
-      + 0.5)\r\n    pos.x = pos.x < 1 and pos.x + 1 or 0\r\n    State.SetLocalPosition(pos)\r\n   
+      + 0.5)\r\n    pos.x = pos.x < 2 and pos.x + 1 or 0\r\n    State.SetLocalPosition(pos)\r\n   
       UpdateUI(pos.x)\r\nend\r\n\r\n-- UI\u306E\u72B6\u614B\u53CD\u6620\uFF08\u8868\u793A\u5207\u308A\u66FF\u3048\uFF09\r\nfunction
       UpdateUI(state)\r\n    if state == 0 then\r\n        vci.assets.material._ALL_SetColor(\"Target\",
       Color.__new(192/255, 192/255, 192/255, 1))\r\n        vci.assets.material._ALL_SetColor(\"TargetR\",
@@ -1499,11 +1505,27 @@ MonoBehaviour:
       Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetCubeW\",
       Color.__new(0, 0, 0, 0))\r\n        vci.assets.material._ALL_SetColor(\"TargetCubeR\",
       Color.__new(0, 0, 0, 0))\r\n        vci.assets._ALL_SetText(\"Text\", \"\")\r\n   
-      end\r\nend\r\nUpdateUI(math.floor(State.GetLocalPosition().x + 0.5))\r\n\r\n--
-      Use\u304B\u3089\u5404\u7A2E\u72B6\u614B\u9077\u79FB\r\nfunction onUse(use)\r\n   
-      if use == \"TargetHandL\" then\r\n        ChangeFingerL()\r\n    elseif use
-      == \"TargetHandR\" then\r\n        ChangeFingerR()\r\n    else\r\n        ChangeUI()\r\n   
-      end\r\nend\r\n\r\n-- \u64CD\u4F5C\u5BFE\u8C61\u306E\u5F37\u8ABF\u8868\u793A\r\nfunction
+      end\r\n    if state ~= 2 then\r\n        TargetHips._ALL_SetActive(true)\r\n       
+      TargetChest._ALL_SetActive(true)\r\n        TargetHead._ALL_SetActive(true)\r\n       
+      TargetUArmL._ALL_SetActive(true)\r\n        TargetLArmL._ALL_SetActive(true)\r\n       
+      TargetHandL._ALL_SetActive(true)\r\n        TargetUArmR._ALL_SetActive(true)\r\n       
+      TargetLArmR._ALL_SetActive(true)\r\n        TargetHandR._ALL_SetActive(true)\r\n       
+      TargetULegL._ALL_SetActive(true)\r\n        TargetLLegL._ALL_SetActive(true)\r\n       
+      TargetFootL._ALL_SetActive(true)\r\n        TargetULegR._ALL_SetActive(true)\r\n       
+      TargetLLegR._ALL_SetActive(true)\r\n        TargetFootR._ALL_SetActive(true)\r\n       
+      Redisplay._ALL_SetActive(false)\r\n    else\r\n        TargetHips._ALL_SetActive(false)\r\n       
+      TargetChest._ALL_SetActive(false)\r\n        TargetHead._ALL_SetActive(false)\r\n       
+      TargetUArmL._ALL_SetActive(false)\r\n        TargetLArmL._ALL_SetActive(false)\r\n       
+      TargetHandL._ALL_SetActive(false)\r\n        TargetUArmR._ALL_SetActive(false)\r\n       
+      TargetLArmR._ALL_SetActive(false)\r\n        TargetHandR._ALL_SetActive(false)\r\n       
+      TargetULegL._ALL_SetActive(false)\r\n        TargetLLegL._ALL_SetActive(false)\r\n       
+      TargetFootL._ALL_SetActive(false)\r\n        TargetULegR._ALL_SetActive(false)\r\n       
+      TargetLLegR._ALL_SetActive(false)\r\n        TargetFootR._ALL_SetActive(false)\r\n       
+      Redisplay._ALL_SetActive(true)\r\n    end\r\nend\r\nUpdateUI(math.floor(State.GetLocalPosition().x
+      + 0.5))\r\n\r\n-- Use\u304B\u3089\u5404\u7A2E\u72B6\u614B\u9077\u79FB\r\nfunction
+      onUse(use)\r\n    if use == \"TargetHandL\" then\r\n        ChangeFingerL()\r\n   
+      elseif use == \"TargetHandR\" then\r\n        ChangeFingerR()\r\n    else\r\n       
+      ChangeUI()\r\n    end\r\nend\r\n\r\n-- \u64CD\u4F5C\u5BFE\u8C61\u306E\u5F37\u8ABF\u8868\u793A\r\nfunction
       onTriggerEnter(item, hit)\r\n    if item ~= vci.state.Get(\"Current\") and
       hit == \"HandPointMarker\" then\r\n        local transform = vci.assets.GetTransform(item)\r\n       
       local pos = transform.GetPosition()\r\n        local rot = transform.GetRotation()\r\n       
@@ -5065,7 +5087,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 21850539503304888, guid: 9da32abc4280dd3488ba8ae9c73d2fcc, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5115,9 +5137,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u8AAC\u660E\u6587\n\u5185\u5BB9\u306F\u30B3\u30FC\u30C9\u3078\u8A18\u8FF0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9da32abc4280dd3488ba8ae9c73d2fcc, type: 2}
-  m_sharedMaterial: {fileID: 21850539503304888, guid: 9da32abc4280dd3488ba8ae9c73d2fcc,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5586,6 +5607,86 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &7892431324793199125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2586588506816774001}
+  - component: {fileID: 5564002078175385962}
+  - component: {fileID: 8387684761630598269}
+  - component: {fileID: 6873407995610647366}
+  m_Layer: 0
+  m_Name: Redisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2586588506816774001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892431324793199125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2640926832669951643}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5564002078175385962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892431324793199125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed42f86ebdb20ba4597c4e753b47ee4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Grabbable: 1
+  Scalable: 0
+  UniformScaling: 0
+  Attractable: 1
+  GroupId: 1
+  NodeIndex: 0
+--- !u!54 &8387684761630598269
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892431324793199125}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &6873407995610647366
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892431324793199125}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8037136933411424662
 GameObject:
   m_ObjectHideFlags: 0
